@@ -9,7 +9,7 @@ departures = {"msk": "Из Москвы", "spb": "Из Петербурга", "n
 
 depart = {1: {"departure": "Из Москвы",
               "cut": "msk",
-              "link": "/msk/"},
+              "link": "/"},
           2: {"departure": "Из Петербурга",
               "cut": "spb",
               "link": "/spb/"},
@@ -268,7 +268,7 @@ tours = {
 app = Flask(__name__)
 
 
-@app.route("/msk/")
+@app.route("/")
 def mskTours():
     print("hello")
     print(type(departures), type(depart), type(tours), sep="/n")
@@ -296,4 +296,4 @@ def kazanTours():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
